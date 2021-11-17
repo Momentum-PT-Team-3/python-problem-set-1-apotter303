@@ -1,0 +1,4 @@
+
+fahr = 32
+celsius = fahr - 32 / 2
+print  (celsius)

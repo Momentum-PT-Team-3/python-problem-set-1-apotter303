@@ -18,16 +18,13 @@ left_over = 20%6
 # 3. Create a function called `greeting` that returns "Hello, <name>!",
 # where <name> is the name given as an argument to the function.
 def greeting(name):
-    return Concatenate('Hello, ', name, '!')
-    #return('Hello, ' + name ,'!')
-
+    return 'Hello, ' + name + '!'
 # ------------------------------------------------------------------------------
 # 4. Create a function called `is_odd` that, given a number, will
 # return true if the number is odd and false if it is not. An odd number is a
 # number which, when divided by 2, has a remainder of 1 or -1.
 def is_odd(odd):
-    if odd%2 == 1 | -1:
-#    if isodd(odd): 
+    if odd % 2 == 1 or odd == -1: 
         return True
     else:
         return False
@@ -37,7 +34,7 @@ def is_odd(odd):
 # return true if the number is even and false if it is not. An even number is a
 # number which, when divided by 2, has a remainder of 0.
 def is_even(even):
-    if is_even(even):
+    if even % 2 == 0:
         return True
     else:
         return False
@@ -47,7 +44,7 @@ def is_even(even):
 # Fahrenheit temperature as an argument and returns the
 # temperature in Celsius.
 def fahrenheit_to_celsius(fahr):
-    celsius = fahr - 30 / 2
+    celsius = (fahr - 32) * (5/9)
     return celsius
 
 # ------------------------------------------------------------------------------
@@ -65,8 +62,8 @@ def celsius_to_fahrenheit(cels):
 # fahrenheit_to_celsius function.
 # Absolute zero (0 K) is equivalent to −273.15 C.
 # 1 degree Kelvin equals 1 degree Celsius.
-def fahrenheit_to_kelvin(fahr_1):
-    kelvin = celsius_to_fahrenheit + 273.15
+def fahrenheit_to_kelvin(fahr):
+    kelvin = fahrenheit_to_celsius(fahr) + 273.15
     return kelvin
 
 # ------------------------------------------------------------------------------
@@ -93,15 +90,14 @@ def lesser(num_1, num_2):
 # If any other language code is used, return nothing.
 def multigreeting(name, langCode):
 
-    if langCode == "en":
-        return Concatenate('Hello, ', name, '!')
-        #return 'Hello, ' + name, + '!'
-    elif langCode == "es":
-        return Concatenate('¡Hola, ', name, '!')
-    elif langCode == "fr":
-        return Concatenate('Bonjour, ', name, '!')
-    elif langCode == "eo":
-        return Concatenate('Saluton', name, '!')
+    if langCode == 'en':
+        return 'Hello, ' + name + '!'
+    elif langCode == 'es':
+        return '¡Hola, ' + name + '!'
+    elif langCode == 'fr':
+        return 'Bonjour, ' + name + '!'
+    elif langCode == 'eo':
+        return 'Saluton, ' + name + '!'
     else:
         return 
 
@@ -134,10 +130,10 @@ def multigreeting(name, langCode):
 # Write a function called `gcd` that takes two arguments and returns the greatest
 # common divisor using the instructions above.
 
-def gcd (int_1, int_2):
+def gcd (a, b):
    
     d = 0
-    while is_even(int_1, int_2) == True:
+    while is_even(a) == True | is_even(b) == True:
         a = a/2
         b = b/2
         d = d+1
